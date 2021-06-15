@@ -8,7 +8,7 @@ import streamlit as st
 import pandas as pd
 import networkx as nx
 from PIL import Image
-import timeit
+
 
 
 connections = pd.read_csv('london.connections.csv', index_col=False)
@@ -78,11 +78,11 @@ with c1:
          options=list(G.nodes)[::-1])
     
  
-    start = timeit.default_timer()
+    
     path = nx.dijkstra_path(G,option,option2, weight='weight')
-    stop = timeit.default_timer()
+    
 
-    print('Time: ', stop - start)  
+    
     
     navigate = st.button('Navigate')
     
